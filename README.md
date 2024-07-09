@@ -1,3 +1,2 @@
 # SolarJava
-A small java program that displays a 2d simplified model of the earth-sun moon system. 
-The program does not display the bodies in accurate size or distance relationships. However, per one orbit of the Earth, there are about 13.37 orbits of the Moon.
+A small java program that displays a 2d simplified model of the terrestrial solar system. This model only includes Mercury, Venus, Earth, and Mars. There are no displayed moons. The orbital distances and planetary sizes are not to scale. However, the relative orbital velocity of each planet is accurate.
