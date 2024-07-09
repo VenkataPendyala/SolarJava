@@ -26,7 +26,7 @@ public class SolarSystemAnimation extends JPanel {
 	private double mercuryAngle = 0;
 
     public SolarSystemAnimation() {
-        Timer timer = new Timer(50, new ActionListener() {
+        Timer timer = new Timer(500, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Update planet positions
@@ -51,23 +51,24 @@ public class SolarSystemAnimation extends JPanel {
         g.fillOval(WIDTH / 2 - SUN_RADIUS, HEIGHT / 2 - SUN_RADIUS, 2 * SUN_RADIUS, 2 * SUN_RADIUS);
 
         // Draw Earth
-        drawPlanet(g, EARTH_ORBITAL_RADIUS, earthAngle, Color.BLUE);
+        drawPlanet(g, EARTH_ORBITAL_RADIUS, earthAngle, 0, Color.BLUE);
 
         // Draw Mars
-        drawPlanet(g, MARS_ORBITAL_RADIUS, marsAngle, Color.RED);
+        drawPlanet(g, MARS_ORBITAL_RADIUS, marsAngle, -5, Color.RED);
 		
 		// Draw Venus
-		drawPlanet(g, VENUS_ORBITAL_RADIUS, venusAngle, Color.RED);
+		drawPlanet(g, VENUS_ORBITAL_RADIUS, venusAngle, -1, Color.RED);
 		
 		// Draw Mercury
-		drawPlanet(g, MERCURY_ORBITAL_RADIUS, mercuryAngle, Color.GRAY);
+		drawPlanet(g, MERCURY_ORBITAL_RADIUS, mercuryAngle, -7, Color.GRAY);
     }
 
-    private void drawPlanet(Graphics g, double orbitalRadius, double angle, Color color) {
+    private void drawPlanet(Graphics g, double orbitalRadius, double angle, int radiusAlteration, Color color) {
         int x = (int) (WIDTH / 2 + orbitalRadius * Math.cos(angle));
         int y = (int) (HEIGHT / 2 + orbitalRadius * Math.sin(angle));
         g.setColor(color);
-        g.fillOval(x - PLANET_RADIUS, y - PLANET_RADIUS, 2 * PLANET_RADIUS, 2 * PLANET_RADIUS);
+		int PLANET_RADIUS_N = PLANET_RADIUS + radiusAlteration;
+        g.fillOval(x - PLANET_RADIUS_N, y - PLANET_RADIUS_N, 2 * PLANET_RADIUS_N, 2 * PLANET_RADIUS_N);
     }
 	
 
