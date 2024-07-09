@@ -1,1 +1,1 @@
-
+This program does not display the earth and sun in an accurate size or distance relation to each other. It simplifies the orbit as well by rendering it as a circle. The orbit of the moon is an ellipse, but it is not accurate to the true orbit of the Moon. However, the Moon in this simulation orbits the earth 13.37 times per Earth's orbit about the sun, which is accurate to the real world.
